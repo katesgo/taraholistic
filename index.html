@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tara - Nurtured by Nature</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #a3e5e4 0%, #93d8f5 50%, #b5b2f5 100%);
+        }
+        
+        .lotus-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .ingredient-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .transition-slow {
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0">
+                    <img class="h-20" src="logosmall.png" alt="Tara Logo">
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="text-gray-700 px-3 py-2 text-sm font-medium hover:text-[#93d8f5] transition-slow">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-[#93d8f5] px-3 py-2 text-sm font-medium transition-slow">About</a>
+                    <a href="#products" class="text-gray-700 hover:text-[#93d8f5] px-3 py-2 text-sm font-medium transition-slow">Products</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#93d8f5] px-3 py-2 text-sm font-medium transition-slow">Contact</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-900 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 hover:text-blue-700 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50">About</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50">Products</a>
+                <a href="#values" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50">Our Values</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h1 class="title-font text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-6">
+                        Nurtured by Nature
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                        Handcrafted, plant-based skincare inspired by self-love and healing. 
+                        Gently formulated for sensitive and eczema-prone skin.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#products" class="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-full text-center font-medium transition-slow">
+                            Discover Our Products
+                        </a>
+                        <a href="#about" class="border-2 border-blue-900 text-blue-900 hover:bg-blue-50 px-6 py-3 rounded-full text-center font-medium transition-slow">
+                            Our Story
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute inset-0 bg-white/30 rounded-full backdrop-blur-sm shadow-lg"></div>
+                        <img src="jar.png" alt="Tara Product" class="relative z-10 w-full h-full object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="title-font text-3xl md:text-4xl font-bold text-[#93d8f5] mb-8">
+                Pure. Simple. Effective.
+            </h2>
+            <p class="text-gray-700 mb-8 text-lg max-w-3xl mx-auto">
+                Tara combines nature's wisdom with minimalist design. Our frosted glass jars with bamboo lids reflect our commitment to sustainability and purity.
+            </p>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#a3e5e4]/20 flex items-center justify-center">
+                        <i class="fas fa-leaf text-[#93d8f5] text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">Plant-Based</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#a3e5e4]/20 flex items-center justify-center">
+                        <i class="fas fa-recycle text-[#93d8f5] text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">Sustainable</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#a3e5e4]/20 flex items-center justify-center">
+                        <i class="fas fa-heart text-[#93d8f5] text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">Gentle</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#a3e5e4]/20 flex items-center justify-center">
+                        <i class="fas fa-seedling text-[#93d8f5] text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">Minimalist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                    Nature's Finest Ingredients
+                </h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">
+                    We carefully select only the purest botanical ingredients known for their healing properties.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="ingredient-card bg-white p-6 rounded-lg shadow-md text-center transition-slow">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-blue-900 text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-blue-900 mb-2">Shea Butter</h3>
+                    <p class="text-sm text-gray-600">Deeply moisturizing and anti-inflammatory</p>
+                </div>
+                
+                <div class="ingredient-card bg-white p-6 rounded-lg shadow-md text-center transition-slow">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-blue-900 text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-blue-900 mb-2">Coconut Oil</h3>
+                    <p class="text-sm text-gray-600">Nourishes and protects the skin barrier</p>
+                </div>
+                
+                <div class="ingredient-card bg-white p-6 rounded-lg shadow-md text-center transition-slow">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-blue-900 text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-blue-900 mb-2">Cocoa Butter</h3>
+                    <p class="text-sm text-gray-600">Rich in antioxidants and improves elasticity</p>
+                </div>
+                
+                <div class="ingredient-card bg-white p-6 rounded-lg shadow-md text-center transition-slow">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-blue-900 text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-blue-900 mb-2">Beeswax</h3>
+                    <p class="text-sm text-gray-600">Locks moisture and forms a breathable barrier</p>
+                </div>
+                
+                <div class="ingredient-card bg-white p-6 rounded-lg shadow-md text-center transition-slow">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-blue-900 text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-blue-900 mb-2">Castor Oil</h3>
+                    <p class="text-sm text-gray-600">Promotes healing and reduces inflammation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                    Our Signature Product
+                </h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">
+                    A simple, honest ritual that brings comfort, confidence, and glow to skin that deserves to feel good.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row justify-center items-center lg:items-stretch gap-8">
+                <div class="w-full lg:w-1/2 max-w-md">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-[#b5b2f5]/20 rounded-xl backdrop-blur-sm"></div>
+                        <img src="lotion.jpg" alt="Tara Lotion" class="relative z-10 w-full h-full object-contain">
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 max-w-md flex flex-col justify-between">
+                    <div>
+                        <h3 class="title-font text-2xl font-bold text-blue-900 mb-2">
+                            Tara Intense Hydration Cream
+                        </h3>
+                       
+                        <p class="text-gray-700 mb-6">
+                            Our all-natural lotion is specially formulated for sensitive and eczema-prone skin. 
+                            Enriched with shea butter, coconut oil, and other healing botanicals, it provides 
+                            deep hydration while soothing irritation.
+                        </p>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-blue-900 mb-2">Key Benefits:</h4>
+                            <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                <li>Calms redness and irritation</li>
+                                <li>Restores skin's moisture barrier</li>
+                                <li>Non-greasy, fast-absorbing formula</li>
+                                <li>Free from parabens, sulfates, and synthetic fragrances</li>
+                                <li>Vegan and cruelty-free</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-900 mr-4">$12.99</span>
+                            <span class="text-sm text-gray-500">(1.7 oz / 50 g)</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                    Our Core Values
+                </h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">
+                    These principles guide everything we do at Tara, from product formulation to customer care.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-seedling text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-blue-900 mb-3">Purity First</h3>
+                    <p class="text-gray-700">
+                        We use only clean, plant-based ingredients—no fillers, no fluff. Every component serves a purpose in nurturing your skin.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-blue-900 mb-3">Holistic Healing</h3>
+                    <p class="text-gray-700">
+                        We believe skincare is self-care. Every jar supports your skin and your spirit, creating moments of peace in your day.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-mountain text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-blue-900 mb-3">Rooted in Nature</h3>
+                    <p class="text-gray-700">
+                        Inspired by traditional botanicals and timeless wisdom—our products are crafted with love and intention.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hands-helping text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-blue-900 mb-3">Gentle for All</h3>
+                    <p class="text-gray-700">
+                        Formulated for sensitive, eczema-prone skin—because everyone deserves relief and glow, regardless of skin type.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-eye text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-blue-900 mb-3">Transparency + Trust</h3>
+                    <p class="text-gray-700">
+                        You'll always know what's in our products and why they're there. We believe in honest, open communication with our community.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-spa text-blue-900 text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-blue-900 mb-3">Empowerment Through Ritual</h3>
+                    <p class="text-gray-700">
+                        We help people turn skincare into moments of peace, confidence, and connection—because how you care for yourself matters.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="py-16 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+                    Ready to Experience Nature's Healing Power?
+                </h2>
+                <p class="text-gray-700 mb-8 text-lg">
+                    Join us and transform your skincare routine with Tara's gentle, effective formulas.
+                </p>
+                <a href="#products" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-full text-lg font-medium transition-slow">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+                        Get In Touch
+                    </h2>
+                    <p class="text-gray-700 mb-8">
+                        Have questions about our products or need skincare advice? We'd love to hear from you.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope text-blue-900 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Email Us</h3>
+                                <p class="text-gray-700">taraholisticbeauty@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt text-blue-900 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Call Us</h3>
+                                <p class="text-gray-700">(416) 700-5502</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-blue-900 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Handmade in</h3>
+                                <p class="text-gray-700">Toronto</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium text-blue-900 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 hover:bg-blue-200 transition-slow">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 hover:bg-blue-200 transition-slow">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 hover:bg-blue-200 transition-slow">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 hover:bg-blue-200 transition-slow">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-blue-50 p-8 rounded-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-900 focus:outline-none focus:ring-1 focus:ring-blue-900">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-900 focus:outline-none focus:ring-1 focus:ring-blue-900">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-900 focus:outline-none focus:ring-1 focus:ring-blue-900">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-900 focus:outline-none focus:ring-1 focus:ring-blue-900"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 px-6 rounded-full font-medium transition-slow">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#93d8f5] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <img src="logosmall.png" alt="Tara Logo" class="h-10 mb-4">
+                    <p class="text-blue-100">
+                        Nurtured by Nature. Handcrafted, plant-based skincare for sensitive souls.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-blue-100 hover:text-white transition-slow">Home</a></li>
+                        <li><a href="#about" class="text-blue-100 hover:text-white transition-slow">About</a></li>
+                        <li><a href="#products" class="text-blue-100 hover:text-white transition-slow">Products</a></li>
+                        <li><a href="#values" class="text-blue-100 hover:text-white transition-slow">Our Values</a></li>
+                        <li><a href="#contact" class="text-blue-100 hover:text-white transition-slow">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-slow">Shipping Policy</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-slow">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-slow">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-slow">Terms of Service</a></li>
+                        <li><a href="#" class="text-blue-100 hover:text-white transition-slow">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="title-font text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-blue-100 mb-4">
+                        Subscribe for skincare tips, exclusive offers, and updates.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-r-lg transition-slow">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-100 mb-4 md:mb-0">
+                    &copy; 2025 Tara Skincare. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-100 hover:text-white transition-slow">
+                        <i class="fab fa-cc-visa text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-100 hover:text-white transition-slow">
+                        <i class="fab fa-cc-mastercard text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-100 hover:text-white transition-slow">
+                        <i class="fab fa-cc-amex text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-100 hover:text-white transition-slow">
+                        <i class="fab fa-cc-paypal text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
